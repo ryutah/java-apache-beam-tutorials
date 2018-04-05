@@ -1,15 +1,16 @@
 package model;
 
-import org.apache.beam.sdk.coders.AvroCoder;
-import org.apache.beam.sdk.coders.DefaultCoder;
-
 import java.util.Arrays;
 import java.util.Optional;
+import org.apache.beam.sdk.coders.AvroCoder;
+import org.apache.beam.sdk.coders.DefaultCoder;
 
 @DefaultCoder(AvroCoder.class)
 public class Sample {
     public static enum Label {
-        NEW("new"), OLD("old"), OTHER("");
+        NEW("new"),
+        OLD("old"),
+        OTHER("");
 
         public final String LABEL;
 
@@ -19,14 +20,14 @@ public class Sample {
 
         public static Label labelOf(String label) {
             return Arrays.stream(values())
-                         .filter(l -> l.LABEL.equals(label))
-                         .findFirst()
-                         .orElse(OTHER);
+                    .filter(l -> l.LABEL.equals(label))
+                    .findFirst()
+                    .orElse(OTHER);
         }
     }
 
     private String url;
-    private Label  label;
+    private Label label;
 
     public Sample() {}
 

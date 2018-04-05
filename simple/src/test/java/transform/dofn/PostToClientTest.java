@@ -1,11 +1,11 @@
 package transform.dofn;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import client.Client;
 import model.Sample;
 import org.apache.beam.sdk.transforms.DoFnTester;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PostToClientTest {
     private static class MockClient implements Client {
